@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "jsx": "react-jsx",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "declaration": true,
+    "declarationMap": true,
+    "outDir": "dist",
+    "ignoreDeprecations": "6.0",
+    "noUncheckedSideEffectImports": true,
+    "rootDir": ".",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    "plugins": [{ "name": "typescript-plugin-css-modules" }]
+    // "typeRoots": ["@types/styles.d.ts"]
+  },
+
+   "include": [
+    "src",
+    ".storybook", 
+    "@types/**.d.ts",
+    "vite.config.ts"
+]
+}
