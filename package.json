@@ -2,10 +2,30 @@
   "name": "ui",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./styles.css": "./dist/index.css"
+  },
   "scripts": {
     "dev": "tsup --watch",
-    "build": "tsup",
+    "dev:css": "tailwindcss -i ./src/styles/index.css -o ./dist/index.css --watch",
+    "build": "tsup && tailwindcss -i ./src/styles/index.css -o ./dist/index.css --minify",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "test": "vitest run",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
@@ -22,22 +42,28 @@
   "homepage": "https://github.com/Krugzvo/ui#readme",
   "devDependencies": {
     "@chromatic-com/storybook": "latest",
+    "@eslint/js": "^10.0.1",
     "@storybook/addon-a11y": "^10.6.0",
     "@storybook/addon-docs": "^10.6.0",
-    "@storybook/addon-vitest": "^10.6.0",
     "@storybook/react-vite": "^10.6.0",
+    "@tailwindcss/cli": "^4.3.3",
     "@tailwindcss/vite": "^4.3.3",
+    "@types/node": "^24.0.0",
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.7",
-    "@vitest/browser-playwright": "latest",
     "@vitest/coverage-v8": "latest",
     "eslint": "^10.10.0",
-    "playwright": "latest",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.4.24",
+    "globals": "^16.4.0",
     "prettier": "^3.9.6",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
     "storybook": "^10.6.0",
     "tailwindcss": "^4.3.3",
     "tsup": "^8.5.1",
-    "typescript": "^7.0.2",
+    "typescript": "^6.0.2",
+    "typescript-eslint": "^8.46.1",
     "vitest": "latest"
   },
   "dependencies": {
