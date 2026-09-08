@@ -12,10 +12,8 @@
     "outDir": "dist",
     "ignoreDeprecations": "6.0",
     "noUncheckedSideEffectImports": true,
-    "rootDir": ".",
-    "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["./src/*"]
     },
     "plugins": [{ "name": "typescript-plugin-css-modules" }]
     // "typeRoots": ["@types/styles.d.ts"]
@@ -25,6 +23,7 @@
     "src",
     ".storybook", 
     "@types/**.d.ts",
-    "vite.config.ts"
+    "vite.config.ts",
+    "vitest.config.ts"
 ]
 }
