@@ -1,77 +1,97 @@
 {
-  "name": "ui",
-  "version": "1.0.0",
-  "description": "",
-  "type": "module",
-  "main": "./dist/index.js",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
-  "sideEffects": [
-    "**/*.css"
-  ],
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js"
-    },
-    "./styles.css": "./dist/index.css"
-  },
-  "scripts": {
-    "dev": "tsup --watch",
-    "dev:css": "tailwindcss -i ./src/styles/index.css -o ./dist/index.css --watch",
-    "build": "tsup && tailwindcss -i ./src/styles/index.css -o ./dist/index.css --minify",
-    "typecheck": "tsc --noEmit",
-    "lint": "eslint .",
-    "test": "vitest run",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Krugzvo/ui.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Krugzvo/ui/issues"
-  },
-  "homepage": "https://github.com/Krugzvo/ui#readme",
-  "devDependencies": {
-    "@chromatic-com/storybook": "latest",
-    "@eslint/js": "^10.0.1",
-    "@storybook/addon-a11y": "^10.6.0",
-    "@storybook/addon-docs": "^10.6.0",
-    "@storybook/react-vite": "^10.6.0",
-    "@tailwindcss/cli": "^4.3.3",
-    "@tailwindcss/vite": "^4.3.3",
-    "@types/node": "^24.0.0",
-    "@types/react": "^19.2.18",
-    "@types/react-dom": "^19.2.7",
-    "@vitest/coverage-v8": "latest",
-    "eslint": "^10.10.0",
-    "eslint-plugin-react-hooks": "^7.0.1",
-    "eslint-plugin-react-refresh": "^0.4.24",
-    "globals": "^16.4.0",
-    "prettier": "^3.9.6",
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0",
-    "storybook": "^10.6.0",
-    "tailwindcss": "^4.3.3",
-    "tsup": "^8.5.1",
-    "typescript": "^6.0.2",
-    "typescript-eslint": "^8.46.1",
-    "vitest": "latest"
-  },
-  "dependencies": {
-    "clsx": "^2.1.1",
-    "tailwind-merge": "^3.6.0"
-  },
-  "peerDependencies": {
-    "react": ">=18",
-    "react-dom": ">=18"
-  }
+	"name": "@kroog/ui",
+	"version": "0.0.0",
+	"description": "",
+	"type": "module",
+	"main": "./dist/index.js",
+	"module": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"files": [
+		"dist"
+	],
+	"sideEffects": [
+		"**/*.css"
+	],
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.js"
+		},
+		"./styles.css": "./dist/index.css"
+	},
+	"scripts": {
+		"dev": "tsup --watch",
+		"dev:css": "tailwindcss -i ./src/styles/index.css -o ./dist/index.css --watch",
+		"build": "tsup && tailwindcss -i ./src/styles/index.css -o ./dist/index.css --minify",
+		"typecheck": "tsc --noEmit",
+		"lint": "eslint .",
+		"test": "vitest run",
+		"storybook": "storybook dev -p 6006",
+		"build-storybook": "storybook build",
+		"prepare": "husky",
+		"commit": "cz"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Krugzvo/ui.git"
+	},
+	"keywords": [
+		"Krug",
+		"Kroog",
+		"ui-kit",
+		"React",
+		"tailwindcss"
+	],
+	"author": "Maksim Dmitriev<sigarachi@yandex.ru>",
+	"maintainers": [
+		"Maksim Dmitriev<sigarachi@yandex.ru>",
+		"Svyatoslav Kholodov<svyatoslave07@gmail.com>"
+	],
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/Krugzvo/ui/issues"
+	},
+	"homepage": "https://github.com/Krugzvo/ui#readme",
+	"devDependencies": {
+		"@chromatic-com/storybook": "latest",
+		"@eslint/js": "^10.0.1",
+		"@storybook/addon-a11y": "^10.6.0",
+		"@storybook/addon-docs": "^10.6.0",
+		"@storybook/react-vite": "^10.6.0",
+		"@tailwindcss/cli": "^4.3.3",
+		"@tailwindcss/vite": "^4.3.3",
+		"@types/node": "^24.0.0",
+		"@types/react": "^19.2.18",
+		"@types/react-dom": "^19.2.7",
+		"@vitest/coverage-v8": "latest",
+		"eslint": "^10.10.0",
+		"eslint-plugin-react-hooks": "^7.0.1",
+		"eslint-plugin-react-refresh": "^0.4.24",
+		"globals": "^16.4.0",
+		"prettier": "^3.9.6",
+		"react": "^19.2.0",
+		"react-dom": "^19.2.0",
+		"storybook": "^10.6.0",
+		"tailwindcss": "^4.3.3",
+		"tsup": "^8.5.1",
+		"typescript": "^6.0.2",
+		"typescript-eslint": "^8.46.1",
+		"vitest": "latest"
+	},
+	"dependencies": {
+		"clsx": "^2.1.1",
+		"commitizen": "4.3.2",
+		"cz-conventional-changelog": "3.3.0",
+		"standard-version": "9.5.0",
+		"tailwind-merge": "^3.6.0"
+	},
+	"peerDependencies": {
+		"react": ">=18",
+		"react-dom": ">=18"
+	},
+	"config": {
+		"commitizen": {
+			"path": "./node_modules/cz-conventional-changelog"
+		}
+	}
 }
