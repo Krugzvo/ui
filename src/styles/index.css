@@ -4,7 +4,9 @@
 @source '../components/**/*.{ts,tsx}';
 @source '../icons/**/*.{ts,tsx}';
 :root {
-	--ui-font-family: 'Raleway', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+	--ui-font-family:
+		'Raleway', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+		sans-serif;
 	--ui-button-primary-background: #1a1a1e;
 	--ui-button-primary-background-hover: #33333a;
 	--ui-button-primary-background-active: #000000;
@@ -26,6 +28,18 @@
 	--ui-button-ghost-text: #1a1a1e;
 	--ui-button-ghost-text-disabled: #1a1a1e;
 	--ui-focus-ring: #4a4aff;
+	--ui-calendar-background: #ffffff;
+	--ui-calendar-border: #e8e8ed;
+	--ui-calendar-row-border: #e8e8ed;
+	--ui-calendar-row-hover: #f5f5f8;
+	--ui-calendar-text: #1a1a1e;
+	--ui-calendar-text-secondary: #6b6b7a;
+	--ui-calendar-text-muted: #9e9eaf;
+	--ui-calendar-date-border: #d1d1d8;
+	--ui-calendar-accent: #4a4aff;
+	--ui-calendar-count-background: #f5f5f8;
+	--ui-calendar-count-text: #6b6b7a;
+	--ui-calendar-skeleton: #ebebf0;
 }
 
 .dark {
@@ -49,4 +63,16 @@
 	--ui-button-ghost-background-active: #ebebf0;
 	--ui-button-ghost-text: #f5f5fa;
 	--ui-button-ghost-text-disabled: #f5f5fa;
+	--ui-calendar-background: #111114;
+	--ui-calendar-border: #2a2a35;
+	--ui-calendar-row-border: #2a2a35;
+	--ui-calendar-row-hover: #1e1e24;
+	--ui-calendar-text: #f5f5fa;
+	--ui-calendar-text-secondary: #a0a0ae;
+	--ui-calendar-text-muted: #6b6b7a;
+	--ui-calendar-date-border: #3d3d4a;
+	--ui-calendar-accent: #9a9af5;
+	--ui-calendar-count-background: #1e1e24;
+	--ui-calendar-count-text: #a0a0ae;
+	--ui-calendar-skeleton: #26262e;
 }
