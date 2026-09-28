@@ -16,14 +16,13 @@ const defaultGroups: CalendarDateGroup[] = [
 	{
 		id: 'today',
 		date: today,
-		defaultExpanded: true,
 		events: [
 			{
-				id: 'dinner',
+				id: 'gaming',
 				title: 'Гейминг',
 				time: '18:00',
 				subtitle: 'Steam',
-				category: { label: 'Друзья', color: '#4a4aff' },
+				category: 'Друзья',
 				onClick: fn(),
 			},
 			{
@@ -31,35 +30,35 @@ const defaultGroups: CalendarDateGroup[] = [
 				title: 'Дейлик',
 				time: '10:20',
 				subtitle: 'Google Meet',
-				category: { label: 'Работа', color: '#c9772f' },
+				category: 'Работа',
 				onClick: fn(),
 			},
 		],
 	},
 	{
 		id: 'workout',
-		date: addDays(today, 1),
+		date: addDays(today, 2),
 		events: [
 			{
 				id: 'workout-1',
 				title: 'Тренировка',
 				time: '21:00',
 				subtitle: 'Спортзал',
-				category: { label: 'Спорт', color: '#1d9e75' },
+				category: 'Спорт',
 				onClick: fn(),
 			},
 		],
 	},
 	{
 		id: 'movie',
-		date: addDays(today, 4),
+		date: addDays(today, 5),
 		events: [
 			{
 				id: 'movie-1',
 				title: 'Человек паук',
 				time: '19:00',
 				subtitle: 'Кинотеатр Саларьево',
-				category: { label: 'Друзья', color: '#d4537e' },
+				category: 'Друзья',
 				onClick: fn(),
 			},
 		],
@@ -101,21 +100,6 @@ export const Empty: Story = {
 	args: {
 		groups: [],
 		emptyMessage: 'Событий пока нет',
-	},
-};
-
-export const ExpandCollapse: Story = {
-	args: {
-		eyebrow: undefined,
-		groups: [{ ...defaultGroups[0], defaultExpanded: false }],
-	},
-	play: async ({ canvasElement }) => {
-		const canvas = within(canvasElement);
-		const toggle = canvas.getByRole('button', { expanded: false });
-		await userEvent.click(toggle);
-		await expect(
-			canvas.getByRole('button', { expanded: true })
-		).toBeInTheDocument();
 	},
 };
 
