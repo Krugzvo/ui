@@ -8,10 +8,10 @@ export interface StatusProps {
 }
 
 const variantClasses: Record<StatusVariant, string> = {
-	base: 'bg-[var(--ui-status-indicatior-base)]',
-	success: 'bg-[var(--ui-status-indicatior-success)]',
-	warning: 'bg-[var(--ui-status-indicatior-warning)]',
-	error: 'bg-[var(--ui-status-indicatior-error)]',
+	base: 'bg-[var(--ui-status-indicator-base)]',
+	success: 'bg-[var(--ui-status-indicator-success)]',
+	warning: 'bg-[var(--ui-status-indicator-warning)]',
+	error: 'bg-[var(--ui-status-indicator-error)]',
 };
 
 const baseClasses = 'w-[8px] h-[8px] rounded-lg';
