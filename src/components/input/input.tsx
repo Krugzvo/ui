@@ -1,3 +1,5 @@
+'use client';
+
 import {
 	forwardRef,
 	useImperativeHandle,
@@ -51,8 +53,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
 				disabled &&
 					'cursor-not-allowed border-[var(--ui-color-primary-disabled)] bg-[var(--ui-color-surface)] text-[var(--ui-color-text-muted)] hover:border-[var(--ui-color-primary-disabled)]',
 				className
-			)}
-		>
+			)}>
 			{leftIcon && (
 				<span className="flex size-4 shrink-0 items-center justify-center">
 					{leftIcon}
@@ -74,8 +75,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
 						onClear?.();
 						inputRef.current?.focus();
 					}}
-					className="flex size-4 shrink-0 items-center justify-center text-current disabled:cursor-not-allowed"
-				>
+					className="flex size-4 shrink-0 items-center justify-center text-current disabled:cursor-not-allowed">
 					<CrossIcon />
 				</button>
 			)}
