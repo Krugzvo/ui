@@ -58,9 +58,13 @@ const states = ['default', 'error', 'success'] as const;
 
 export const Matrix: Story = {
 	render: () => (
-		<div className="grid grid-cols-2 gap-3 bg-black p-5">
+		<div className="dark grid grid-cols-2 gap-3 bg-[var(--ui-color-background)] p-5">
 			{states.map((status) => (
-				<Input key={`${status}-plain`} status={status} placeholder="your text here..." />
+				<Input
+					key={`${status}-plain`}
+					status={status}
+					placeholder="your text here..."
+				/>
 			))}
 			{states.map((status) => (
 				<Input
@@ -72,7 +76,12 @@ export const Matrix: Story = {
 				/>
 			))}
 			<Input disabled placeholder="your text here..." />
-			<Input disabled clearable leftIcon={<ArrowSingleUpIcon />} placeholder="your text here..." />
+			<Input
+				disabled
+				clearable
+				leftIcon={<ArrowSingleUpIcon />}
+				placeholder="your text here..."
+			/>
 		</div>
 	),
 };
