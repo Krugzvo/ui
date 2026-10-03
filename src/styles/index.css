@@ -1,12 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400&family=Raleway:wght@400;600&display=swap');
 @import 'tailwindcss';
 
 @source '../components/**/*.{ts,tsx}';
 @source '../icons/**/*.{ts,tsx}';
 :root {
-	--ui-font-family:
-		'Raleway', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
-		sans-serif;
+	--ui-font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+	--ui-input-font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+	--ui-input-background: #ffffff;
+	--ui-input-background-disabled: #f5f5f8;
+	--ui-input-border: #d1d1d8;
+	--ui-input-border-hover: #b0b0bc;
+	--ui-input-border-focus: #1a1a1e;
+	--ui-input-border-disabled: #e8e8ed;
+	--ui-input-border-error: #d32f2f;
+	--ui-input-border-success: #2e7d32;
+	--ui-input-text: #1a1a1e;
+	--ui-input-text-disabled: #c5c5d2;
+	--ui-input-text-error: #d32f2f;
+	--ui-input-text-success: #2e7d32;
 	--ui-button-primary-background: #1a1a1e;
 	--ui-button-primary-background-hover: #33333a;
 	--ui-button-primary-background-active: #000000;
