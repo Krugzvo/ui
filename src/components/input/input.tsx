@@ -21,9 +21,9 @@ export type InputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> & {
 
 const statusClasses: Record<InputStatus, string> = {
 	default:
-		'border-[var(--ui-input-border)] text-[var(--ui-input-text)] hover:border-[var(--ui-input-border-hover)] focus-within:border-[var(--ui-input-border-focus)]',
-	error: 'border-[var(--ui-input-border-error)] text-[var(--ui-input-text-error)]',
-	success: 'border-[var(--ui-input-border-success)] text-[var(--ui-input-text-success)]',
+		'border-[var(--ui-color-border)] text-[var(--ui-color-text-primary)] hover:border-[var(--ui-color-border-strong)] focus-within:border-[var(--ui-color-focus-ring)]',
+	error: 'border-[var(--ui-color-error)] text-[var(--ui-color-error)]',
+	success: 'border-[var(--ui-color-success)] text-[var(--ui-color-success)]',
 };
 
 export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
@@ -46,19 +46,23 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
 	return (
 		<div
 			className={cn(
-				'box-border flex h-[50px] w-[300px] items-center gap-2.5 rounded-lg border bg-[var(--ui-input-background)] px-3 font-[family-name:var(--ui-input-font-family)] transition-colors duration-150',
+				'box-border flex h-[50px] w-[300px] items-center gap-2.5 rounded-lg border bg-[var(--ui-color-surface-raised)] px-3 font-[family-name:var(--ui-input-font-family)] transition-colors duration-150',
 				statusClasses[status],
 				disabled &&
-					'cursor-not-allowed border-[var(--ui-input-border-disabled)] bg-[var(--ui-input-background-disabled)] text-[var(--ui-input-text-disabled)] hover:border-[var(--ui-input-border-disabled)]',
+					'cursor-not-allowed border-[var(--ui-color-primary-disabled)] bg-[var(--ui-color-surface)] text-[var(--ui-color-text-muted)] hover:border-[var(--ui-color-primary-disabled)]',
 				className
 			)}
 		>
-			{leftIcon && <span className="flex size-4 shrink-0 items-center justify-center">{leftIcon}</span>}
+			{leftIcon && (
+				<span className="flex size-4 shrink-0 items-center justify-center">
+					{leftIcon}
+				</span>
+			)}
 			<input
 				ref={inputRef}
 				disabled={disabled}
 				aria-invalid={status === 'error' || undefined}
-				className="min-w-0 flex-1 bg-transparent text-base leading-[19px] text-inherit outline-none placeholder:text-current disabled:cursor-not-allowed"
+				className="min-w-0 flex-1 bg-transparent text-base leading-[19px] text-inherit outline-none placeholder:text-[var(--ui-color-text-muted)] disabled:cursor-not-allowed"
 				{...props}
 			/>
 			{clearable && (
