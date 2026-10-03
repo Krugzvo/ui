@@ -40,6 +40,10 @@
 	--ui-calendar-count-background: #f5f5f8;
 	--ui-calendar-count-text: #6b6b7a;
 	--ui-calendar-skeleton: #ebebf0;
+	--ui-status-indicatior-base: #5b5fef;
+	--ui-status-indicatior-warning: #b45309;
+	--ui-status-indicatior-success: #2e7d32;
+	--ui-status-indicatior-error: #d32f2f;
 }
 
 .dark {
@@ -75,4 +79,8 @@
 	--ui-calendar-count-background: #1e1e24;
 	--ui-calendar-count-text: #a0a0ae;
 	--ui-calendar-skeleton: #26262e;
+	--ui-status-indicatior-base: #8b8cff;
+	--ui-status-indicatior-warning: #fbbf24;
+	--ui-status-indicatior-success: #6bcf8a;
+	--ui-status-indicatior-error: #ff6b6b;
 }
