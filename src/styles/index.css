@@ -79,10 +79,10 @@
 	--ui-calendar-count-background: var(--ui-color-surface-accent);
 	--ui-calendar-count-text: var(--ui-color-text-secondary);
 	--ui-calendar-skeleton: var(--ui-color-surface);
-	--ui-status-indicatior-base: #5b5fef;
-	--ui-status-indicatior-warning: #b45309;
-	--ui-status-indicatior-success: #2e7d32;
-	--ui-status-indicatior-error: #d32f2f;
+	--ui-status-indicator-base: var(--ui-color-text-secondary);
+	--ui-status-indicator-warning: var(--ui-color-warning);
+	--ui-status-indicator-success: var(--ui-color-success);
+	--ui-status-indicator-error: var(--ui-color-error);
 }
 
 .dark {
@@ -108,8 +108,8 @@
 	--ui-color-warning: #fbbf24;
 	--ui-color-error: #ff6b6b;
 	--ui-color-info: #60a5fa;
-	--ui-status-indicatior-base: #8b8cff;
-	--ui-status-indicatior-warning: #fbbf24;
-	--ui-status-indicatior-success: #6bcf8a;
-	--ui-status-indicatior-error: #ff6b6b;
+	--ui-status-indicator-base: var(--ui-color-text-secondary);
+	--ui-status-indicator-warning: var(--ui-color-warning);
+	--ui-status-indicator-success: var(--ui-color-success);
+	--ui-status-indicator-error: var(--ui-color-error);
 }
