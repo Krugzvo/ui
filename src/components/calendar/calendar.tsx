@@ -32,14 +32,19 @@ export type CalendarProps = {
 	className?: string;
 };
 
-function formatDayLabel(date: Date, locale?: string) {
-	return new Intl.DateTimeFormat(locale, {
+const formatDayLabel = (date: Date, locale?: string) =>
+	new Intl.DateTimeFormat(locale, {
 		day: 'numeric',
 		month: 'long',
 	}).format(date);
-}
 
-function CalendarDayLabel({ date, locale }: { date: Date; locale?: string }) {
+const CalendarDayLabel = ({
+	date,
+	locale,
+}: {
+	date: Date;
+	locale?: string;
+}) => {
 	return (
 		<div className="relative mt-5 mb-1 flex items-center first:mt-0">
 			<span className="absolute inset-x-0 top-1/2 h-px -translate-y-1/2 bg-[var(--ui-color-border)]" />
@@ -52,18 +57,18 @@ function CalendarDayLabel({ date, locale }: { date: Date; locale?: string }) {
 			</Typography>
 		</div>
 	);
-}
+};
 
-function CalendarRow({ event }: { event: CalendarEvent }) {
+const CalendarRow = ({ event }: { event: CalendarEvent }) => {
 	const interactive = Boolean(event.onClick);
 
-	function handleKeyDown(e: KeyboardEvent<HTMLDivElement>) {
+	const handleKeyDown = (e: KeyboardEvent<HTMLDivElement>) => {
 		if (!interactive) return;
 		if (e.key === 'Enter' || e.key === ' ') {
 			e.preventDefault();
 			event.onClick?.();
 		}
-	}
+	};
 
 	return (
 		<div
@@ -105,9 +110,9 @@ function CalendarRow({ event }: { event: CalendarEvent }) {
 			)}
 		</div>
 	);
-}
+};
 
-function CalendarSkeletonRow() {
+const CalendarSkeletonRow = () => {
 	return (
 		<div className="flex items-baseline gap-[18px] px-1 py-2.5">
 			<div className="h-4 w-[36px] flex-none animate-pulse rounded bg-[var(--ui-color-surface)]" />
@@ -118,9 +123,9 @@ function CalendarSkeletonRow() {
 			<div className="h-2.5 w-12 flex-none animate-pulse rounded bg-[var(--ui-color-surface)]" />
 		</div>
 	);
-}
+};
 
-export function Calendar({
+export const Calendar = ({
 	groups,
 	eyebrow,
 	action,
@@ -131,7 +136,7 @@ export function Calendar({
 	emptyMessage,
 	locale,
 	className,
-}: CalendarProps) {
+}: CalendarProps) => {
 	return (
 		<div
 			className={cn(
@@ -195,4 +200,4 @@ export function Calendar({
 			)}
 		</div>
 	);
-}
+};
