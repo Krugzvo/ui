@@ -61,18 +61,18 @@ const states = ['default', 'hover', 'active', 'disabled'] as const;
 
 const previewStateClasses = {
 	primary: {
-		hover: 'bg-[var(--ui-button-primary-background-hover)]',
-		active: 'bg-[var(--ui-button-primary-background-active)]',
+		hover: 'bg-[var(--ui-color-primary-hover)]',
+		active: 'bg-[var(--ui-color-primary-pressed)]',
 	},
 	secondary: {
 		hover:
-			'bg-[var(--ui-button-secondary-background-hover)] border-[var(--ui-button-secondary-border-hover)]',
+			'bg-[var(--ui-color-surface-accent)] border-[var(--ui-color-border-strong)]',
 		active:
-			'bg-[var(--ui-button-secondary-background-active)] border-[var(--ui-button-secondary-border-active)]',
+			'bg-[var(--ui-color-surface-accent)] border-[var(--ui-color-primary-pressed)]',
 	},
 	ghost: {
-		hover: 'bg-[var(--ui-button-ghost-background-hover)]',
-		active: 'bg-[var(--ui-button-ghost-background-active)]',
+		hover: 'bg-[var(--ui-color-surface-accent)]',
+		active: 'bg-[var(--ui-color-surface-accent)]',
 	},
 } as const;
 
@@ -83,9 +83,15 @@ export const Matrix: Story = {
 				<section
 					key={theme}
 					className={theme === 'dark' ? 'dark' : undefined}
-					style={{ background: theme === 'dark' ? '#000' : '#fff', padding: 32 }}
+					style={{ background: 'var(--ui-color-background)', padding: 32 }}
 				>
-					<div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, max-content)', gap: 12 }}>
+					<div
+						style={{
+							display: 'grid',
+							gridTemplateColumns: 'repeat(4, max-content)',
+							gap: 12,
+						}}
+					>
 						{sizes.flatMap((size) =>
 							variants.flatMap((variant) =>
 								states.map((state) => (

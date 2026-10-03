@@ -1,52 +1,115 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Raleway:wght@400;600;700&display=swap');
 @import 'tailwindcss';
 
 @source '../components/**/*.{ts,tsx}';
 @source '../icons/**/*.{ts,tsx}';
 :root {
-	--ui-font-family: 'Raleway', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-	--ui-button-primary-background: #1a1a1e;
-	--ui-button-primary-background-hover: #33333a;
-	--ui-button-primary-background-active: #000000;
-	--ui-button-primary-background-disabled: #d1d1d8;
-	--ui-button-primary-text: #ffffff;
-	--ui-button-primary-text-disabled: #9e9eaf;
+	--ui-font-family:
+		'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+		sans-serif;
+	--ui-input-font-family:
+		'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+		sans-serif;
+
+	/* Pixso: Kroog Semantic / Light */
+	--ui-color-background: #e5e5e5;
+	--ui-color-surface: #f7f7fa;
+	--ui-color-surface-raised: #ffffff;
+	--ui-color-surface-accent: #ede9fe;
+	--ui-color-text-primary: #18182f;
+	--ui-color-text-secondary: #55556b;
+	--ui-color-text-muted: #68687d;
+	--ui-color-text-inverse: #ffffff;
+	--ui-color-border: #c8c8d3;
+	--ui-color-border-strong: #a9a9b8;
+	--ui-color-primary: #5b5fef;
+	--ui-color-primary-hover: #4b4fd9;
+	--ui-color-primary-pressed: #3d40be;
+	--ui-color-primary-disabled: #b9b9d4;
+	--ui-color-primary-foreground: #ffffff;
+	--ui-color-accent: #7c3aed;
+	--ui-color-focus-ring: #7779ff;
+	--ui-color-success: #2e7d32;
+	--ui-color-warning: #b45309;
+	--ui-color-error: #d32f2f;
+	--ui-color-info: #2563eb;
+
+	--ui-input-background: var(--ui-color-surface-raised);
+	--ui-input-background-disabled: var(--ui-color-surface);
+	--ui-input-border: var(--ui-color-border);
+	--ui-input-border-hover: var(--ui-color-border-strong);
+	--ui-input-border-focus: var(--ui-color-focus-ring);
+	--ui-input-border-disabled: var(--ui-color-primary-disabled);
+	--ui-input-border-error: var(--ui-color-error);
+	--ui-input-border-success: var(--ui-color-success);
+	--ui-input-text: var(--ui-color-text-primary);
+	--ui-input-text-disabled: var(--ui-color-text-muted);
+	--ui-input-text-error: var(--ui-color-error);
+	--ui-input-text-success: var(--ui-color-success);
+	--ui-button-primary-background: var(--ui-color-primary);
+	--ui-button-primary-background-hover: var(--ui-color-primary-hover);
+	--ui-button-primary-background-active: var(--ui-color-primary-pressed);
+	--ui-button-primary-background-disabled: var(--ui-color-primary-disabled);
+	--ui-button-primary-text: var(--ui-color-primary-foreground);
+	--ui-button-primary-text-disabled: var(--ui-color-text-muted);
 	--ui-button-secondary-background: transparent;
-	--ui-button-secondary-background-hover: #f5f5f8;
-	--ui-button-secondary-background-active: #ebebf0;
-	--ui-button-secondary-border: #d1d1d8;
-	--ui-button-secondary-border-hover: #b0b0bc;
-	--ui-button-secondary-border-active: #9a9aaa;
-	--ui-button-secondary-border-disabled: #e8e8ed;
-	--ui-button-secondary-text: #1a1a1e;
-	--ui-button-secondary-text-disabled: #c5c5d2;
+	--ui-button-secondary-background-hover: var(--ui-color-surface-accent);
+	--ui-button-secondary-background-active: var(--ui-color-surface-accent);
+	--ui-button-secondary-border: var(--ui-color-border);
+	--ui-button-secondary-border-hover: var(--ui-color-border-strong);
+	--ui-button-secondary-border-active: var(--ui-color-primary-pressed);
+	--ui-button-secondary-border-disabled: var(--ui-color-border);
+	--ui-button-secondary-text: var(--ui-color-text-primary);
+	--ui-button-secondary-text-disabled: var(--ui-color-text-muted);
 	--ui-button-ghost-background: transparent;
-	--ui-button-ghost-background-hover: #f5f5f8;
-	--ui-button-ghost-background-active: #ebebf0;
-	--ui-button-ghost-text: #1a1a1e;
-	--ui-button-ghost-text-disabled: #1a1a1e;
-	--ui-focus-ring: #4a4aff;
+	--ui-button-ghost-background-hover: var(--ui-color-surface-accent);
+	--ui-button-ghost-background-active: var(--ui-color-surface-accent);
+	--ui-button-ghost-text: var(--ui-color-text-primary);
+	--ui-button-ghost-text-disabled: var(--ui-color-text-muted);
+	--ui-focus-ring: var(--ui-color-focus-ring);
+	--ui-calendar-background: var(--ui-color-surface-raised);
+	--ui-calendar-border: var(--ui-color-border);
+	--ui-calendar-row-border: var(--ui-color-border);
+	--ui-calendar-row-hover: var(--ui-color-surface-accent);
+	--ui-calendar-text: var(--ui-color-text-primary);
+	--ui-calendar-text-secondary: var(--ui-color-text-secondary);
+	--ui-calendar-text-muted: var(--ui-color-text-muted);
+	--ui-calendar-date-border: var(--ui-color-border-strong);
+	--ui-calendar-accent: var(--ui-color-primary);
+	--ui-calendar-count-background: var(--ui-color-surface-accent);
+	--ui-calendar-count-text: var(--ui-color-text-secondary);
+	--ui-calendar-skeleton: var(--ui-color-surface);
+	--ui-status-indicator-base: var(--ui-color-text-secondary);
+	--ui-status-indicator-warning: var(--ui-color-warning);
+	--ui-status-indicator-success: var(--ui-color-success);
+	--ui-status-indicator-error: var(--ui-color-error);
 }
 
 .dark {
-	--ui-button-primary-background: #f5f5fa;
-	--ui-button-primary-background-hover: #ffffff;
-	--ui-button-primary-background-active: #d8d8e0;
-	--ui-button-primary-background-disabled: #3d3d4a;
-	--ui-button-primary-text: #000000;
-	--ui-button-primary-text-disabled: #6b6b7a;
-	--ui-button-secondary-background: #1a1a1e;
-	--ui-button-secondary-background-hover: #ffffff;
-	--ui-button-secondary-background-active: #ffffff;
-	--ui-button-secondary-border: #3d3d4a;
-	--ui-button-secondary-border-hover: #5a5a6a;
-	--ui-button-secondary-border-active: #6b6b7a;
-	--ui-button-secondary-border-disabled: #2a2a35;
-	--ui-button-secondary-text: #f5f5fa;
-	--ui-button-secondary-text-disabled: #3d3d4a;
-	--ui-button-ghost-background: transparent;
-	--ui-button-ghost-background-hover: #ffffff;
-	--ui-button-ghost-background-active: #ebebf0;
-	--ui-button-ghost-text: #f5f5fa;
-	--ui-button-ghost-text-disabled: #f5f5fa;
+	/* Pixso: Kroog Semantic / Dark */
+	--ui-color-background: #121212;
+	--ui-color-surface: #1a1923;
+	--ui-color-surface-raised: #242233;
+	--ui-color-surface-accent: #2d2448;
+	--ui-color-text-primary: #f1f0ff;
+	--ui-color-text-secondary: #b7b4ce;
+	--ui-color-text-muted: #8d8aa3;
+	--ui-color-text-inverse: #121212;
+	--ui-color-border: #353348;
+	--ui-color-border-strong: #514e6a;
+	--ui-color-primary: #8b8cff;
+	--ui-color-primary-hover: #a1a2ff;
+	--ui-color-primary-pressed: #7477e6;
+	--ui-color-primary-disabled: #494966;
+	--ui-color-primary-foreground: #121212;
+	--ui-color-accent: #a78bfa;
+	--ui-color-focus-ring: #a9aaff;
+	--ui-color-success: #6bcf8a;
+	--ui-color-warning: #fbbf24;
+	--ui-color-error: #ff6b6b;
+	--ui-color-info: #60a5fa;
+	--ui-status-indicator-base: var(--ui-color-text-secondary);
+	--ui-status-indicator-warning: var(--ui-color-warning);
+	--ui-status-indicator-success: var(--ui-color-success);
+	--ui-status-indicator-error: var(--ui-color-error);
 }

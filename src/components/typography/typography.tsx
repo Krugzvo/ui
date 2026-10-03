@@ -3,15 +3,7 @@ import type { ComponentPropsWithoutRef, ElementType, ReactNode } from 'react';
 import { cn } from '../../lib/cn';
 
 export type TypographyVariant =
-	| 'h1'
-	| 'h2'
-	| 'h3'
-	| 'h4'
-	| 'h5'
-	| 'h6'
-	| 'body1'
-	| 'body2'
-	| 'description';
+	'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'body1' | 'body2' | 'description';
 
 type TypographyOwnProps<T extends ElementType> = {
 	as?: T;
@@ -20,8 +12,9 @@ type TypographyOwnProps<T extends ElementType> = {
 	variant?: TypographyVariant;
 };
 
-export type TypographyProps<T extends ElementType = 'p'> = TypographyOwnProps<T> &
-	Omit<ComponentPropsWithoutRef<T>, keyof TypographyOwnProps<T>>;
+export type TypographyProps<T extends ElementType = 'p'> =
+	TypographyOwnProps<T> &
+		Omit<ComponentPropsWithoutRef<T>, keyof TypographyOwnProps<T>>;
 
 const defaultElements: Record<TypographyVariant, ElementType> = {
 	h1: 'h1',
@@ -58,7 +51,11 @@ export function Typography<T extends ElementType = 'p'>({
 
 	return (
 		<Component
-			className={cn('m-0 font-[family-name:var(--ui-font-family)]', variantClasses[variant], className)}
+			className={cn(
+				'm-0 font-[family-name:var(--ui-font-family)] text-[var(--ui-color-text-primary)]',
+				variantClasses[variant],
+				className
+			)}
 			{...props}
 		>
 			{children}
