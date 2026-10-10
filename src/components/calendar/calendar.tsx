@@ -1,3 +1,5 @@
+'use client';
+
 import type { KeyboardEvent, ReactNode } from 'react';
 
 import { cn } from '../../lib/cn';
@@ -51,8 +53,7 @@ const CalendarDayLabel = ({
 			<Typography
 				as="span"
 				variant="description"
-				className="relative z-[1] ml-3 whitespace-nowrap bg-[var(--ui-color-surface-raised)] pr-2.5 font-bold uppercase tracking-wide text-[var(--ui-color-text-secondary)]"
-			>
+				className="relative z-[1] ml-3 whitespace-nowrap bg-[var(--ui-color-surface-raised)] pr-2.5 font-bold uppercase tracking-wide text-[var(--ui-color-text-secondary)]">
 				{formatDayLabel(date, locale)}
 			</Typography>
 		</div>
@@ -80,8 +81,7 @@ const CalendarRow = ({ event }: { event: CalendarEvent }) => {
 			role={interactive ? 'button' : undefined}
 			tabIndex={interactive ? 0 : undefined}
 			onClick={event.onClick}
-			onKeyDown={handleKeyDown}
-		>
+			onKeyDown={handleKeyDown}>
 			<span className="w-[52px] flex-none text-[15px] font-semibold tabular-nums text-[var(--ui-color-text-primary)]">
 				{event.time}
 			</span>
@@ -89,16 +89,14 @@ const CalendarRow = ({ event }: { event: CalendarEvent }) => {
 				<Typography
 					as="p"
 					variant="body2"
-					className="font-semibold text-[var(--ui-color-text-primary)]"
-				>
+					className="font-semibold text-[var(--ui-color-text-primary)]">
 					{event.title}
 				</Typography>
 				{event.subtitle && (
 					<Typography
 						as="p"
 						variant="description"
-						className="mt-0.5 text-[var(--ui-color-text-secondary)]"
-					>
+						className="mt-0.5 text-[var(--ui-color-text-secondary)]">
 						{event.subtitle}
 					</Typography>
 				)}
@@ -143,16 +141,14 @@ export const Calendar = ({
 				'rounded-[14px] border border-[var(--ui-color-border)] bg-[var(--ui-color-surface-raised)] p-[22px] pb-2 font-[family-name:var(--ui-font-family)]',
 				className
 			)}
-			aria-disabled={disabled || undefined}
-		>
+			aria-disabled={disabled || undefined}>
 			{(eyebrow || action) && (
 				<div className="mb-[18px] flex items-baseline justify-between gap-3">
 					{eyebrow && (
 						<Typography
 							as="p"
 							variant="description"
-							className="font-bold uppercase tracking-[0.08em] text-[var(--ui-color-text-secondary)]"
-						>
+							className="font-bold uppercase tracking-[0.08em] text-[var(--ui-color-text-secondary)]">
 							{eyebrow}
 						</Typography>
 					)}
@@ -171,8 +167,7 @@ export const Calendar = ({
 					<Typography
 						as="p"
 						variant="description"
-						className="text-[var(--ui-color-text-muted)]"
-					>
+						className="text-[var(--ui-color-text-muted)]">
 						{emptyMessage}
 					</Typography>
 				</div>
@@ -193,8 +188,7 @@ export const Calendar = ({
 				<Typography
 					as="p"
 					variant="description"
-					className="mb-2 mt-2 text-[var(--ui-color-text-muted)]"
-				>
+					className="mb-2 mt-2 text-[var(--ui-color-text-muted)]">
 					{disabledMessage}
 				</Typography>
 			)}

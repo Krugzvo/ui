@@ -1,3 +1,5 @@
+'use client';
+
 import type { ComponentPropsWithoutRef, ElementType, ReactNode } from 'react';
 
 import { cn } from '../../lib/cn';
@@ -56,8 +58,7 @@ export function Typography<T extends ElementType = 'p'>({
 				variantClasses[variant],
 				className
 			)}
-			{...props}
-		>
+			{...props}>
 			{children}
 		</Component>
 	);

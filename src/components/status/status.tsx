@@ -1,3 +1,5 @@
+'use client';
+
 import { cn } from '../../lib/cn';
 import React, { PropsWithChildren } from 'react';
 

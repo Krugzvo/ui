@@ -1,3 +1,5 @@
+'use client';
+
 import type { ButtonHTMLAttributes, ReactNode } from 'react';
 
 import { cn } from '../../lib/cn';
@@ -67,8 +69,7 @@ export function Button({
 				iconOnly && 'w-[50px] px-0',
 				className
 			)}
-			{...props}
-		>
+			{...props}>
 			{!iconOnly && (
 				<Typography as="span" className="text-inherit">
 					{children}
@@ -77,8 +78,7 @@ export function Button({
 			{icon && (
 				<span
 					className="block size-4 shrink-0 [&>svg]:block [&>svg]:size-4"
-					aria-hidden="true"
-				>
+					aria-hidden="true">
 					{icon}
 				</span>
 			)}
